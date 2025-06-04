@@ -24,6 +24,7 @@ async function getPotenza() {
             const co2 = data[0].co2_totale.replace(',', '.');
             potenzaElement.textContent = potenza;
             energiaElement.textContent = energia;
+            // energiaElement.textContent = '123456789012';
             co2Element.textContent = co2;
         } else {
             potenzaElement.textContent = 'N/D';
