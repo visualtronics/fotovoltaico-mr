@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=384, initial-scale=1.0">
+    <title>Diretta Consiglio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 8px;
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            width: 384px;
+            height: 192px;
+            box-sizing: border-box;
+            border: 1px solid #ffffff;
+            overflow: hidden;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 368px;  /* Adjusted for padding */
+            height: 176px; /* Adjusted for padding */
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/TR0-JBHDAUA?si=ZvAaZIkkt1bgvnRI&amp;controls=0" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+    </div>
+</body>
+</html>
