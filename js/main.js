@@ -15,9 +15,9 @@ async function getPotenza() {
 
         // debugElement.textContent = 'Connessione in corso...';
 
-        // potenzaElement.textContent = '56.19'; // Example value, replace with actual data
-        // energiaElement.textContent = '189524.31'; // Example value, replace with actual data
-        // co2Element.textContent = '66788.37'; // Example value, replace with actual data
+        potenzaElement.textContent = '56.19'; // Example value, replace with actual data
+        energiaElement.textContent = '189524.31'; // Example value, replace with actual data
+        co2Element.textContent = '66788.37'; // Example value, replace with actual data
 
         const response = await fetch('https://www.monitoraggioimpianti.it/solarnet/liveDataShort3.ashx', {
             method: 'GET',
@@ -35,9 +35,9 @@ async function getPotenza() {
             const potenza = data[0].potenza_totale.replace(',', '.');
             const energia = data[0].produzione_totale.replace(',', '.');
             const co2 = data[0].co2_totale.replace(',', '.');
-            potenzaElement.textContent = potenza;
-            energiaElement.textContent = energia;
-            co2Element.textContent = co2;
+            // potenzaElement.textContent = potenza;
+            // energiaElement.textContent = energia;
+            // co2Element.textContent = co2;
 
 
             // debugElement.textContent = 'Dati aggiornati: ' + new Date().toLocaleTimeString();
