@@ -1,10 +1,19 @@
+@font-face {
+    font-family: 'Slam Dunk';
+    src: url('../fonts/slam-dunk/SlamDunk.ttf') format('truetype');
+}
+
 body {
     margin: 0;
     padding: 8px;
     font-family: Arial, sans-serif;
     font-size: 12px;
     line-height: 1.2;
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.9);
+    background-image: url('../images/immagine sfondo_Tavola disegno 1.jpg');
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
     color: #ffffff;
     width: 384px;
     height: 192px;
@@ -17,12 +26,18 @@ header {
 }
 
 h1 {
+    font-size: 24px;
+    margin: 0 0 8px 10px;
+}
+
+h2 {
     font-size: 16px;
-    margin: 0 0 8px 0;
+    margin: 0 0 8px 12px;
 }
 
 section {
-    margin-top: 12px;  /* Added to move rows down */
+    margin-top: 20px;  /* Added to move rows down */
+    
 }
 
 .data-row {
@@ -30,27 +45,27 @@ section {
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 8px;
-    padding-right: 10px;
-    margin-left: 40px;
+    padding-right: -6px;
+    margin-left: 15px;
 }
 
 .label {
     text-align: right;
     width: 120px;
-    font-size: 12px;
-    line-height: 24px;
+    font-size: 13px;  /* Reduced from 14px */
+    line-height: 26px;  /* Reduced from 28px */
     padding-right: 10px;
     flex-shrink: 0;
 }
 
 .value {
     text-align: right;
-    width: 100px;
-    font-size: 24px;
-    line-height: 24px;
+    width: 105px;  /* Reduced from 110px */
+    font-size: 26px;  /* Reduced from 28px */
+    line-height: 26px;  /* Reduced from 28px */
     padding: 0;
     margin: 0;
-    display: block;  /* Changed to block */
+    display: block;
     white-space: nowrap;
     flex-shrink: 1;
 }
@@ -58,8 +73,8 @@ section {
 .unit {
     text-align: left;
     width: 40px;
-    font-size: 12px;
-    line-height: 24px;
+    font-size: 13px;  /* Reduced from 14px */
+    line-height: 26px;  /* Reduced from 28px */
     padding-left: 10px;
     flex-shrink: 0;
 }
@@ -84,9 +99,31 @@ footer {
 }
 
 #potenza-value,
-#energia-value,
-#co2-value {
+#energia-value {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: right;
-    display: block;
-    width: 100%;  /* Take full width of parent */
+    display: inline-block;
+    width: 120px;  /* Reduced from 110px */
+    color: #ff0000;
+}
+
+#co2-value {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: right;
+    display: inline-block;
+    width: 120px;  /* Reduced from 110px */
+    color: #00ff00;
+}
+
+.debug-section {
+    position: absolute;
+    top: 180px;
+    left: 8px;
+    right: 8px;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.debug-text {
+    word-wrap: break-word;
 }
