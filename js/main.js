@@ -13,7 +13,7 @@ async function getPotenza() {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
 
-        const response = await fetch('https://fotovoltaico-mr-proxy.onrender.com/api/dati', {
+        const response = await fetch('https://fotovoltaico-mr-proxy-domain.onrender.com/api/dati', {
             method: 'GET',
             headers: {
                 'Accept': '*/*',
