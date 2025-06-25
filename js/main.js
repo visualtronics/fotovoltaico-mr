@@ -37,8 +37,8 @@ async function getPotenza() {
     }
 }
 
-// Aggiorna ogni 5 secondi
-setInterval(getPotenza, 5000);
+// Aggiorna ogni 10 minuti
+setInterval(getPotenza, 10*60*1000);
 
 // Prima chiamata all'avvio
 getPotenza();
