@@ -3,9 +3,8 @@ async function getPotenza() {
         const potenzaElement = document.querySelector('#potenza-value');
         const energiaElement = document.querySelector('#energia-value');
         const co2Element = document.querySelector('#co2-value');
-        const debugElement = document.querySelector('#debug-value');
 
-        if (!potenzaElement || !energiaElement || !co2Element || !debugElement) {
+        if (!potenzaElement || !energiaElement || !co2Element) {
             console.error('Required elements not found');
             return;
         }
@@ -13,7 +12,7 @@ async function getPotenza() {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
 
-        const response = await fetch('https://fotovoltaico-mr-proxy.onrender.com/api/dati', {
+        const response = await fetch('https://www.monitoraggioimpianti.it/solarnet/liveDataShort3.ashx', {
             method: 'GET',
             headers: {
                 'Accept': '*/*',
@@ -25,15 +24,9 @@ async function getPotenza() {
 
 
         if (Array.isArray(data) && data.length > 0) {
-            const potenza = data[0].potenza_totale.replace(',', '.');
-            const energia = data[0].produzione_totale.replace(',', '.');
-            const co2 = data[0].co2_totale.replace(',', '.');
-            potenzaElement.textContent = potenza;
-            energiaElement.textContent = energia;
-            co2Element.textContent = co2;
-
-
-            debugElement.textContent = 'Dati aggiornati: ' + new Date().toLocaleTimeString();
+            potenzaElement.textContent = data[0].potenza_totale;
+            energiaElement.textContent = data[0].produzione_totale;
+            co2Element.textContent = data[0].co2_totale;
         } else {
             potenzaElement.textContent = 'N/D';
             energiaElement.textContent = 'N/D';
@@ -41,10 +34,6 @@ async function getPotenza() {
         }
     } catch (error) {
         console.error('Errore nel recupero dei dati:', error);
-        const debugElement = document.querySelector('#debug-value');
-        if (debugElement) {
-            debugElement.textContent = `Errore: ${error.message}`;
-        }
     }
 }
 
